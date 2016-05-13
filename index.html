@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>cube特效</title>
+	<style type="text/css" media="screen">
+	.cube-position{position:absolute; top:70px;right: 70px;perspective:1000px;z-index: 2}
+        .cube-mask{position: relative;width: 100px;height: 100px;transform-style:preserve-3d;}	
+        .cube-mask div{position: absolute;border: 3px solid;width: 100%;height: 100%;text-align: center;font: 12px/20px "microsoft Yahei";transition:background 2s;}
+        .cube-mask div img{width: 100%;height: 100%}
+        .cube-mask .right{-webkit-animation: move-left 2s linear both;-moz-animation: move-left 2s linear both}	
+        .cube-mask .left{-webkit-animation: move-right 2s linear 2s both;-moz-animation: move-right 2s linear 2s both}
+        .cube-mask .top{-webkit-animation: move-top 2s linear 4s both;-moz-animation: move-top 2s linear 4s both}
+        .cube-mask .buttom{-webkit-animation: move-buttom 2s linear 6s both;-moz-animation: move-buttom 2s linear 6s both}
+        .cube-mask .front{-webkit-animation: move-front 2s linear 10s both;-moz-animation: move-front 2s linear 10s both}
+        .cube-mask .back{-webkit-animation: move-back 2s linear 8s both;-moz-animation: move-back 2s linear 8s both}
+        .cube-mask{-webkit-animation:move 4s linear 14s infinite both;-moz-animation:move 4s linear 14s infinite both}
+        .cube-mask:hover .right{background: red;opacity: 1}
+        .cube-mask:hover .left{background: #11a;opacity: 1}
+        .cube-mask:hover .top{background: blue;opacity: 1}
+        .cube-mask:hover .buttom{background: green;opacity: 1}
+        .cube-mask:hover .back{background: #679;opacity: 1}
+        .cube-mask:hover .front{background: #6aa;opacity: 1}
+        @keyframes move-right{from{transform: rotateY(0) translateZ(0px);}to{transform: rotateY(90deg) translateZ(50px)}}
+        @keyframes move-left{from{transform: rotateY(0) translateZ(0px);}to{transform: rotateY(-90deg) translateZ(50px)}}
+        @keyframes move-top{from{transform: rotateY(0) translateZ(0px);}to{transform: rotateX(90deg) translateZ(50px)}}
+        @keyframes move-buttom{from{transform: rotateY(0) translateZ(0px);}to{transform: rotateX(-90deg) translateZ(50px)}}
+        @keyframes move-front{from{transform: rotateY(0) translateZ(0px);}to{transform:translateZ(50px)}}
+        @keyframes move-back{from{transform: rotateY(0) translateZ(0px);}to{transform: rotateY(180deg) translateZ(50px)}}
+        @keyframes move{
+        0%{transform:rotate3d(1,1,1,0deg);}
+        100%{transform:rotate3d(1,1,1,360deg);}
+        }
+        *{margin: 0;padding:0;}
+        body{background: #cccccc;height: 100%}
+        #photo{position:relative;height: 100%;width: 100%;float: right;z-index: 1}
+        #photo div{position:absolute;width: 300px;height: 300px;padding: 30px;box-sizing: border-box;background: #fff;box-shadow: inset 0 0 1px 1px #747079;transition: all 1s;top: 0;left: 0}
+        #photo .current{z-index: 9;}
+        #photo img{cursor: pointer;}
+	</style>
+</head>
+<body>
+	<div class="cube-position" id="cube-position">
+	    <div class="cube-mask">
+	    	<div class="right">right<div style="postition: absolute;border:0 solid black;top: 0px"><img src="images/10.jpg"></div></div>
+	    	<div class="left">left<div style="postition: absolute;border:0 solid black;top: 0"><img src="images/4.jpg"></div></div>
+	    	<div class="top">top<div style="postition: absolute;border:0 solid black;top: 0"><img src="images/5.jpg"></div></div>
+	    	<div class="buttom">buttom<div style="postition: absolute;border:0 solid black;top: 0"><img src="images/7.jpg"></div></div>    	
+	    	<div class="front">front<div style="postition: absolute;border:0 solid black;top: 0"><img src="images/2.jpg"></div></div>
+	    	<div class="back">back<div style="postition: absolute;border:0 solid black;top: 0"><img src="images/11.jpg"></div></div>
+	    </div>
+	</div>
+        <div style="width:100%;height:100%;position:absolute;top: 0%;left:0%;overflow: hidden">
+                <div id="photo">
+                        <div class="image_1">
+                                <img src="images/1.jpg" alt="">
+                        </div>
+                          <div class="image_2">
+                                <img src="images/2.jpg" alt="">
+                        </div>
+                          <div class="image_3">
+                                <img src="images/3.jpg" alt="">
+                        </div>
+                          <div class="image_4">
+                                <img src="images/4.jpg" alt="">
+                        </div>
+                          <div class="image_5">
+                                <img src="images/5.jpg" alt="">
+                        </div>
+                          <div class="image_6">
+                                <img src="images/6.jpg" alt="">
+                        </div>
+                          <div class="image_7">
+                                <img src="images/7.jpg" alt="">
+                        </div>
+                          <div class="image_8">
+                                <img src="images/8.jpg" alt="">
+                        </div>
+                          <div class="image_9">
+                                <img src="images/9.jpg" alt="">
+                        </div>
+                        <div class="image_10">
+                                <img src="images/10.jpg" alt="">
+                        </div>
+                        <div class="image_11">
+                                <img src="images/11.jpg" alt="">
+                        </div>
+                        <div class="image_12">
+                                <img src="images/12.jpg" alt="">
+                        </div>
+                        <div class="image_13">
+                                <img src="images/13.jpg" alt="">
+                        </div>
+                        <div class="image_14">
+                                <img src="images/14.jpg" alt="">
+                        </div>
+                        <div class="image_15">
+                                <img src="images/15.jpg" alt="">
+                        </div>
+                </div>
+        </div>
+        <script type="text/javascript">
+        window.onload=function(){
+            var photo=document.getElementById("photo");
+            var imag=photo.getElementsByTagName("div");
+            var photoW=parseInt(getStyle(photo, "width"));
+            var photoH=parseInt(getStyle(photo, "height"));
+            var cubePos=document.getElementById("cube-position");
+            var pic=photo.getElementsByTagName("img");
+            function randomPos(target){
+                for (var i = 0,l=imag.length; i < l; i++) {
+                    imag[i].className=imag[i].className.replace(/current\s*/,"");
+                    if (pic[i]==target) {
+                            imag[i].className+=" current";
+                            imag[i].style.transform="rotate(0deg)";
+                            imag[i].style.left=document.documentElement.clientWidth/2-150+"px";
+                            imag[i].style.top=document.documentElement.clientHeight/2-150+"px";
+                    }else{
+                            imag[i].style.left=Math.abs(Math.ceil(Math.random()*photoW)-300)+"px";
+                            imag[i].style.top=Math.abs(Math.ceil(Math.random()*photoH)-300)+"px";
+                            imag[i].style.transform="rotate("+Math.random()*360+"deg)";
+                    }
+                };
+            };
+            randomPos(pic[0]);
+            function addHandler(element,type,handler){
+                if(element.addEventListener){
+                    element.addEventListener(type, handler, false)
+                }else if(element.attachEvent){
+                    element.attachEvent("on"+type, handler)
+                }else{
+                    element["on"+type]=handler;
+                }
+            }
+            addHandler(photo, "click", function(event){
+                var event=getEvent(event),
+                target=getTarget(event);
+                if(target.nodeName=="IMG"){
+                randomPos(target)
+                }  
+            });
+            function getEvent(event){
+                return event?event:window.event;//后者兼容IE
+            }
+            function getTarget(event){
+                return event.target||event.srcElement;//后者兼容IE
+            }
+            function getStyle(obj, name){
+                    if(obj.currentStyle){
+                            return obj.currentStyle[name];
+                    }else{
+                            return getComputedStyle(obj, false)[name];
+                    }           
+            }
+        }
+        </script>
+</body>
+</html>
